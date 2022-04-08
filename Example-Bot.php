@@ -5,7 +5,7 @@ if(!file_exists("iTelegram.php")){
 }
 require_once('iTelegram.php');
 use iTelegram\Bot;
-define('API_KEY', "BOT_ACCESS_TOKEN");
+define('API_KEY', "5263375648:AAEl2F6iJWfiCq6N8R9Xj5hMpudktFfH0Jg");
 
 $bot		= new Bot();
 $bot->Authentification(API_KEY);
