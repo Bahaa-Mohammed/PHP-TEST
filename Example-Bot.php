@@ -32,6 +32,6 @@ unlink("error_log");
 if($text == "hi"){
 $m = $bot->sendMessage($chat_id, "<b>Hello</b> <a href='tg://user?id=$chat_id'>$firstname</a> !\n<b>Special Thanks for using iNeoTeam Telegram Bot Class.</b>.", "HTML", true);
 sleep(3);
-$bot->pinMessage($chat_id, $message_id = $m, $notification = null)
+$bot->pinMessage($chat_id, $message_id = $m, $notification = null);
 }
 ?>
