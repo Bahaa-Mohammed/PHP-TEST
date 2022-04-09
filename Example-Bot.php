@@ -16,7 +16,7 @@ $chat_id	= $bot->getChatId();
 $username	= $bot->getChatUsername();
 $firstname	= $bot->getChatFirstname();
 $message_id	= $bot->MessageId();
-
+$inputType	= $bot->InlineQuery();
 if($text == "/start"){
     $r = $bot->sendMessage($chat_id, "<b>Hello</b> <a href='tg://user?id=$chat_id'>$firstname</a>.", "HTML", true);
 	sleep(2); // for example
@@ -24,7 +24,9 @@ $bot->pinMessage($chat_id, $message_id = $r->result->message_id, $notification =
 	$bot->sendMessage($chat_id, "<b>New class loaded successfully.</b>", "HTML", true, $message_id);
 }
 
-$in = [[
+$inline_query_id = $bot->UpdateType($inputType);
+
+$data = [[
                 'type' => 'article',
                 'id' =>base64_encode(rand(5,555)),
                 'thumb_url'=>"https://telegra.ph/file/9a0259e325f83b1a050ce.jpg",
@@ -51,7 +53,8 @@ $in = [[
                             ['text' => "ok", 'switch_inline_query_current_chat' => "switch"],['text' => "ok", 'switch_inline_query_current_chat' => "switch"]
                         ]]]
             ]];
-
-
+if($inputType =="hi"){
+AnswerInlineQuery($inline_query_id, $data);
+}
 unlink("error_log");
 ?>
