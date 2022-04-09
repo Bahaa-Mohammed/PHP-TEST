@@ -1,4 +1,14 @@
 <?php
+
+register_shutdown_function(function() {
+  if(http_response_code() != 200) {
+    http_response_code(200);
+    file_get_contents('https://api.telegram.org/bot5263375648:AAEl2F6iJWfiCq6N8R9Xj5hMpudktFfH0Jg/sendMessage?' . http_build_query([
+      'chat_id' => '<chat id from update request>',
+      'text' => 'An internal server error has occurred. Please try again later.',
+    ]));
+  }
+});
 error_reporting(0);
 set_time_limit(0);
 ob_start();
@@ -20,7 +30,7 @@ $inputType	= $bot->InlineQuery("data");
 $inline_query_idg	= $bot->InlineQuery("id");
 $text_inline = $bot->inline_query_text();
 $inline_query_id = $bot->inline_query_id();
-if($text == "/start"){
+if($text == "/start"){{
 
 $keyboard = json_encode(['inline_keyboard' => [
             [['text' => 'English🇬🇧' , 'callback_data' => 'lang-en']],
