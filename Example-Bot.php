@@ -61,6 +61,8 @@ $results = [[
                         ]]]
             ]];
 
-
+if($text_inline == "test"){
+$bot->answerInlineQuery($inline_query_id, $results, $cache_time = null, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '');
+  }
 unlink("error_log");
 ?>
