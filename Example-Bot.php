@@ -56,7 +56,7 @@ $data = [[
                             ['text' => "ok", 'switch_inline_query_current_chat' => "switch"],['text' => "ok", 'switch_inline_query_current_chat' => "switch"]
                         ]]]
             ]];
-if($text_inline =="hi"){
+if($text_inline){
 $bot->AnswerInlineQuery($inline_query_id, $data);
 }
 unlink("error_log");
