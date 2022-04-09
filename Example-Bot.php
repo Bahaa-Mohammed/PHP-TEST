@@ -1,14 +1,6 @@
 <?php
 
-register_shutdown_function(function() {
-  if(http_response_code() != 200) {
-    http_response_code(200);
-    file_get_contents('https://api.telegram.org/bot5263375648:AAEl2F6iJWfiCq6N8R9Xj5hMpudktFfH0Jg/sendMessage?' . http_build_query([
-      'chat_id' =>$chat_id,
-      'text' => 'An internal server error has occurred. Please try again later.',
-    ]));
-  }
-});
+
 error_reporting(0);
 set_time_limit(0);
 ob_start();
@@ -74,5 +66,15 @@ $results = [[
 if($text_inline == "test"){
 $bot->answerInlineQuery($inline_query_id, $results, $cache_time = null, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '');
   }
+
+register_shutdown_function(function() {
+  if(http_response_code() != 200) {
+    http_response_code(200);
+    file_get_contents('https://api.telegram.org/bot5263375648:AAEl2F6iJWfiCq6N8R9Xj5hMpudktFfH0Jg/sendMessage?' . http_build_query([
+      'chat_id' =>$chat_id,
+      'text' => 'An internal server error has occurred. Please try again later.',
+    ]));
+  }
+});
 unlink("error_log");
 ?>
