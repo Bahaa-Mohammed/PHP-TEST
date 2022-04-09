@@ -18,6 +18,10 @@ $firstname	= $bot->getChatFirstname();
 $message_id	= $bot->MessageId();
 
 if($text == "/start"){
-    $bot->sendMessage($chat_id, "<b>Hello</b> <a href='tg://user?id=$chat_id'>$firstname</a> !\n\n<b>Special Thanks for using iNeoTeam Telegram Bot Class.</b>\n\n<b>GitHub:</b> https://github.com/iNeoTeam/iTelegram\n<b>Powered By</b> @iNeoTeam.", "HTML", true);
+    $r = $bot->sendMessage($chat_id, "<b>Hello</b> <a href='tg://user?id=$chat_id'>$firstname</a>.", "HTML", true);
+	sleep(2); // for example
+$bot->pinMessage($chat_id, $message_id = $r->result->message_id, $notification = null);
+	$bot->sendMessage($chat_id, "<b>New class loaded successfully.</b>", "HTML", true, $message_id);
 }
+unlink("error_log");
 ?>
