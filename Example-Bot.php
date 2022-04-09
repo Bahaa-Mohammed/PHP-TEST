@@ -23,5 +23,35 @@ if($text == "/start"){
 $bot->pinMessage($chat_id, $message_id = $r->result->message_id, $notification = null);
 	$bot->sendMessage($chat_id, "<b>New class loaded successfully.</b>", "HTML", true, $message_id);
 }
+
+$in = [[
+                'type' => 'article',
+                'id' =>base64_encode(rand(5,555)),
+                'thumb_url'=>"https://telegra.ph/file/9a0259e325f83b1a050ce.jpg",
+                'title' => "title",
+                'description'=>"dec",
+                'url'=> "https://www.google.com",
+                'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "Message"],
+                'reply_markup' => [
+                'inline_keyboard' => [
+                        [
+                            ['text' => "ok", 'switch_inline_query' => "switch"],['text' => "ok", 'switch_inline_query' => "switch"]
+                        ]]]
+            ],[
+                'type' => 'article',
+                'id' =>base64_encode(rand(5,555)),
+                'thumb_url'=>"https://telegra.ph/file/749c791efc314b97bc1f7.jpg",
+                'title' => "Title2",
+                'description'=>"dec2",
+                'url'=> "https://www.google.com",
+                'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "hello"],
+                'reply_markup' => [
+                'inline_keyboard' => [
+                        [
+                            ['text' => "ok", 'switch_inline_query_current_chat' => "switch"],['text' => "ok", 'switch_inline_query_current_chat' => "switch"]
+                        ]]]
+            ]];
+
+
 unlink("error_log");
 ?>
