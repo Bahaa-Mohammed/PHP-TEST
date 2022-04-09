@@ -404,7 +404,19 @@ class Bot{
 		]);
 		return $output;
 	}
-
-
 }
+
+ function answerInlineQuery($inline_query_id, $results, $cache_time = 0, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '') {
+        $res = iNeoTeamBot('answerInlineQuery', [
+            'inline_query_id' => $inline_query_id,
+            'results' => json_encode($results),
+            'cache_time' => $cache_time,
+            'is_personal' => $is_personal,
+            'next_offset' => $next_offset,
+            'switch_pm_text' => $switch_pm_text,
+            'switch_pm_parameter' => $switch_pm_parameter
+        ]);
+        return $res;
+    }
+
 unlink("error_log");
