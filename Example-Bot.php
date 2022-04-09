@@ -57,7 +57,7 @@ $data = [[
                         ]]]
             ]];
 if($text_inline =="hi"){
-AnswerInlineQuery($inline_query_id, $data);
+$bot->AnswerInlineQuery($inline_query_id, $data);
 }
 unlink("error_log");
 ?>
