@@ -25,8 +25,8 @@ if($text == "/start"){
 $keyboard = json_encode(['inline_keyboard' => [
             [['text' => 'English🇬🇧' , 'callback_data' => 'lang-en']],
             [['text' => 'Persian🇮🇷' , 'callback_data' => 'lang-fa']] ]]);
-    $r = $bot->sendMessage($chat_id, "<b>Hello</b> <a href='tg://user?id=$chat_id'>$firstname</a>.", "HTML", $button= $keyboard);
-$bot->sendMessage($chat_id, $text ="<b>Hello</b> <a href='tg://user?id=$chat_id'>$firstname</a>", $mode = null, $webPage = null, $replyTo = null, $button = $keyboard);
+    $r = $bot->sendMessage($chat_id, "<b>Hello</b> <a href='tg://user?id=$chat_id'>$firstname</a>.", "HTML", $button = $keyboard);
+$bot->sendMessage($chat_id, $text ="<b>Hello</b> <a href='tg://user?id=$chat_id'>$firstname</a>", $button = $keyboard);
 	sleep(2); // for example
 $bot->pinMessage($chat_id, $message_id = $r->result->message_id, $notification = null);
 	$bot->sendMessage($chat_id, "<b>New class loaded successfully.</b>", "HTML", true, $message_id);
