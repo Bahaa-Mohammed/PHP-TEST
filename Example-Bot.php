@@ -17,7 +17,7 @@ $username	= $bot->getChatUsername();
 $firstname	= $bot->getChatFirstname();
 $message_id	= $bot->MessageId();
 $inputType	= $bot->InlineQuery("data");
-$inline_query_id	= $bot->InlineQuery(id);
+$id	= $bot->InlineQuery(id);
 if($text == "/start"){
     $r = $bot->sendMessage($chat_id, "<b>Hello</b> <a href='tg://user?id=$chat_id'>$firstname</a>.", "HTML", true);
 	sleep(2); // for example
@@ -25,7 +25,7 @@ $bot->pinMessage($chat_id, $message_id = $r->result->message_id, $notification =
 	$bot->sendMessage($chat_id, "<b>New class loaded successfully.</b>", "HTML", true, $message_id);
 }
 
-$inline_query_id = $bot->UpdateType($inputType);
+$inline_query_id = $bot->UpdateType($id);
 
 $data = [[
                 'type' => 'article',
