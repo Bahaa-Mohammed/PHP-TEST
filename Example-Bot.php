@@ -7,7 +7,7 @@ register_shutdown_function(function() {
 error_reporting(0);
 set_time_limit(0);
 ob_start();
-if(!file_exists("iTelegram.php")){{
+if(!file_exists("iTelegram.php")){
     copy('https://raw.githubusercontent.com/iNeoTeam/iTelegram/main/iTelegram.phar', 'iTelegram.php');
 }
 require_once('iTelegram.php');
