@@ -16,7 +16,8 @@ $chat_id	= $bot->getChatId();
 $username	= $bot->getChatUsername();
 $firstname	= $bot->getChatFirstname();
 $message_id	= $bot->MessageId();
-$inputType	= $bot->InlineQuery();
+$inputType	= $bot->InlineQuery("data");
+$inline_query_id	= $bot->InlineQuery(id);
 if($text == "/start"){
     $r = $bot->sendMessage($chat_id, "<b>Hello</b> <a href='tg://user?id=$chat_id'>$firstname</a>.", "HTML", true);
 	sleep(2); // for example
