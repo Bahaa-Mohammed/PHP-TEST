@@ -33,7 +33,7 @@ $bot->pinMessage($chat_id, $message_id = $r->result->message_id, $notification =
 
 $inline_query = $bot->UpdateType($inputType);
 
-$data = [[
+$results = [[
                 'type' => 'article',
                 'id' =>base64_encode(rand(5,555)),
                 'thumb_url'=>"https://telegra.ph/file/9a0259e325f83b1a050ce.jpg",
@@ -63,5 +63,8 @@ $data = [[
 if($text_inline){
 $bot->AnswerInlineQuery($inline_query_id, $data);
 }
+if($text_inline == "test"){
+$bot->answerInlineQuery($inline_query_id, $results, $cache_time = 0, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '') {
+  }
 unlink("error_log");
 ?>
