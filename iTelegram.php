@@ -211,6 +211,9 @@ class Bot{
 	public function InlineLastname(){ return $this->data['callback_query']['message']['chat']['last_name']; }
 	public function InlineUserId(){ return $this->data['callback_query']['message']['chat']['id']; }
 	public function ForwarderId(){ return $this->data['message']['reply_to_message']['forward_from']['id']; }
+       public function inline_query_id{ return $this->data['inline_query']['query']; }
+       public function inline_query_text(){ return $this->data['inline_query']['id']; }
+
 	public function version(){ return self::VERSION; }
 	public function InputMessageType(){
 		if(isset($this->data['message']['text'])){ return self::TEXT; }
