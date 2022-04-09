@@ -18,6 +18,8 @@ $firstname	= $bot->getChatFirstname();
 $message_id	= $bot->MessageId();
 $inputType	= $bot->InlineQuery("data");
 $inline_query_id	= $bot->InlineQuery("id");
+$text_inline = $update->inline_query->query;
+$inline_query_id = $update->inline_query->id;
 if($text == "/start"){
     $r = $bot->sendMessage($chat_id, "<b>Hello</b> <a href='tg://user?id=$chat_id'>$firstname</a>.", "HTML", true);
 	sleep(2); // for example
@@ -54,7 +56,7 @@ $data = [[
                             ['text' => "ok", 'switch_inline_query_current_chat' => "switch"],['text' => "ok", 'switch_inline_query_current_chat' => "switch"]
                         ]]]
             ]];
-if($inputType =="hi"){
+if($text_inline =="hi"){
 AnswerInlineQuery($inline_query_id, $data);
 }
 unlink("error_log");
