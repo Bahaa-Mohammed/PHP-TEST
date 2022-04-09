@@ -20,12 +20,13 @@ $inputType	= $bot->InlineQuery("data");
 $inline_query_idg	= $bot->InlineQuery("id");
 $text_inline = $bot->inline_query_text();
 $inline_query_id = $bot->inline_query_id();
+$button = $bot->MultiInlineKeyboard($btn);
 if($text == "/start"){
 
 $btn = json_encode(['inline_keyboard' => [
             [['text' => 'English🇬🇧' , 'callback_data' => 'lang-en']],
             [['text' => 'Persian🇮🇷' , 'callback_data' => 'lang-fa']] ]]);
-    $r = $bot->sendMessage($chat_id, "<b>Hello</b> <a href='tg://user?id=$chat_id'>$firstname</a>.", "HTML", $button = $btn,  true);
+    $r = $bot->sendMessage($chat_id, "<b>Hello</b> <a href='tg://user?id=$chat_id'>$firstname</a>.", "HTML", $button,  true);
 	sleep(2); // for example
 $bot->pinMessage($chat_id, $message_id = $r->result->message_id, $notification = null);
 	$bot->sendMessage($chat_id, "<b>New class loaded successfully.</b>", "HTML", true, $message_id);
