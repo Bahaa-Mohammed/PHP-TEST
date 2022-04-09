@@ -1,8 +1,5 @@
 <?php
 error_reporting(0);
-if(!file_exists("iTelegram.php")){
-    copy("https://raw.githubusercontent.com/iNeoTeam/iTelegram/main/iTelegram.phar", "iTelegram.php");
-}
 require_once('iTelegram.php');
 use iTelegram\Bot;
 define('API_KEY', "5263375648:AAEl2F6iJWfiCq6N8R9Xj5hMpudktFfH0Jg");
