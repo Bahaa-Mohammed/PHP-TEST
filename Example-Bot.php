@@ -22,7 +22,7 @@ $inputType	= $bot->InlineQuery("data");
 $inline_query_idg	= $bot->InlineQuery("id");
 $text_inline = $bot->inline_query_text();
 $inline_query_id = $bot->inline_query_id();
-if($text == "/start"){{
+if($text == "/start"){
 
 $keyboard = json_encode(['inline_keyboard' => [
             [['text' => 'English🇬🇧' , 'callback_data' => 'lang-en']],
