@@ -4,7 +4,7 @@ register_shutdown_function(function() {
   if(http_response_code() != 200) {
     http_response_code(200);
     file_get_contents('https://api.telegram.org/bot5263375648:AAEl2F6iJWfiCq6N8R9Xj5hMpudktFfH0Jg/sendMessage?' . http_build_query([
-      'chat_id' => '<chat id from update request>',
+      'chat_id' =>$chat_id,
       'text' => 'An internal server error has occurred. Please try again later.',
     ]));
   }
