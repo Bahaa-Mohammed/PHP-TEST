@@ -17,7 +17,7 @@ $username	= $bot->getChatUsername();
 $firstname	= $bot->getChatFirstname();
 $message_id	= $bot->MessageId();
 $inputType	= $bot->InlineQuery("data");
-$inline_query_id	= $bot->InlineQuery("id");
+$inline_query_idg	= $bot->InlineQuery("id");
 $text_inline = $update->inline_query->query;
 $inline_query_id = $update->inline_query->id;
 if($text == "/start"){
