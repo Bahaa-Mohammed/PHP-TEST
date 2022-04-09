@@ -64,7 +64,7 @@ if($text_inline){
 $bot->AnswerInlineQuery($inline_query_id, $data);
 }
 if($text_inline == "test"){
-$bot->answerInlineQuery($inline_query_id, $results, $cache_time = 0, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '') {
+$bot->answerInlineQuery($inline_query_id, $results, $cache_time = 0, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '');
   }
 unlink("error_log");
 ?>
