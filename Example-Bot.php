@@ -19,6 +19,4 @@ if($text == "/start"){
     $r = $bot->sendMessage($chat_id, "<b>Hello</b> <a href='tg://user?id=$chat_id'>$firstname</a> !\n\n<b>Special Thanks for using iNeoTeam Telegram Bot Class.</b>\n\n<b>GitHub:</b> https://github.com/iNeoTeam\iTelegram\n<b>Powered By</b> @iNeoTeam.", "HTML", true);
 $bot->pinMessage($chat_id, $message_id = $r, $notification = null);
 }
-unlink("error_log");
-
 ?>
